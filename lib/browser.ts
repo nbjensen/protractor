@@ -417,8 +417,8 @@ export class ProtractorBrowser extends AbstractExtendedWebDriver {
    * Call waitForAngularEnabled() without passing a value to read the current
    * state without changing it.
    */
-  waitForAngularEnabled(enabled: boolean|wdpromise.Promise<boolean> = null):
-      wdpromise.Promise<boolean> {
+  aitForAngularEnabled(enabled: boolean|wdpromise.Promise<boolean> = null): boolean
+      | wdpromise.Promise<boolean> {
     if (enabled != null) {
       const ret = this.driver.controlFlow().execute(() => {
         return wdpromise.when(enabled).then((enabled: boolean) => {
@@ -433,7 +433,7 @@ export class ProtractorBrowser extends AbstractExtendedWebDriver {
       this.internalIgnoreSynchronization = !enabled;
       return ret;
     }
-    return wdpromise.when(!this.ignoreSynchronization);
+    return !this.ignoreSynchronization;
   }
 
   /**
@@ -936,7 +936,7 @@ export class ProtractorBrowser extends AbstractExtendedWebDriver {
                       throw new Error(
                           `Angular could not be found on the page ${destination}. ` +
                           `If this is not an Angular application, you may need to turn off waiting for Angular.
-                          Please see 
+                          Please see
                           https://github.com/angular/protractor/blob/master/docs/timeouts.md#waiting-for-angular-on-page-load`);
                     }
                     return angularVersion;
