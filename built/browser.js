@@ -247,7 +247,7 @@ class ProtractorBrowser extends AbstractExtendedWebDriver {
      * Call waitForAngularEnabled() without passing a value to read the current
      * state without changing it.
      */
-    aitForAngularEnabled(enabled = null) {
+    waitForAngularEnabled(enabled = null) {
         if (enabled != null) {
             const ret = this.driver.controlFlow().execute(() => {
                 return selenium_webdriver_1.promise.when(enabled).then((enabled) => {

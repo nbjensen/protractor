@@ -193,7 +193,7 @@ export declare class ProtractorBrowser extends AbstractExtendedWebDriver {
      * Call waitForAngularEnabled() without passing a value to read the current
      * state without changing it.
      */
-    aitForAngularEnabled(enabled?: boolean | wdpromise.Promise<boolean>): boolean | wdpromise.Promise<boolean>;
+    waitForAngularEnabled(enabled?: boolean | wdpromise.Promise<boolean>): boolean | wdpromise.Promise<boolean>;
     /**
      * Get the processed configuration object that is currently being run. This
      * will contain the specs and capabilities properties of the current runner

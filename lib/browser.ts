@@ -417,7 +417,7 @@ export class ProtractorBrowser extends AbstractExtendedWebDriver {
    * Call waitForAngularEnabled() without passing a value to read the current
    * state without changing it.
    */
-  aitForAngularEnabled(enabled: boolean|wdpromise.Promise<boolean> = null): boolean
+  waitForAngularEnabled(enabled: boolean|wdpromise.Promise<boolean> = null): boolean
       | wdpromise.Promise<boolean> {
     if (enabled != null) {
       const ret = this.driver.controlFlow().execute(() => {
